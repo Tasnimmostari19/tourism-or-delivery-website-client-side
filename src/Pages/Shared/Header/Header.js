@@ -4,13 +4,15 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 const Header = () => {
     return (
         <div>
-            <Navbar bg="dark" variant="dark" sticky="top">
+            <Navbar style={{ height: '80px' }} bg="dark" variant="dark" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                    <Navbar.Brand href="#home">book A trip</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link href="#features">Trips</Nav.Link>
+                        <Nav.Link href="#pricing">My Trips</Nav.Link>
+                        <Nav.Link href="#pricing">Manage All Orders</Nav.Link>
+                        <Nav.Link href="#pricing">Add a Trip</Nav.Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <Navbar.Text>

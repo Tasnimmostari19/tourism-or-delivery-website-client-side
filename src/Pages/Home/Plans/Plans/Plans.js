@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Row } from 'react-bootstrap';
 import Plan from '../Plan/Plan';
 
 
@@ -23,12 +24,14 @@ const Plans = () => {
 
         <div>
             <h2>Plans</h2>
-            {
-                plans.map(plan => <Plan
-                    key={plan._id}
-                    plan={plan}
-                ></Plan>)
-            }
+            <Row xs={1} md={2} className="g-4">
+                {
+                    plans.map(plan => <Plan
+                        key={plan._id}
+                        plan={plan}
+                    ></Plan>)
+                }
+            </Row>
         </div>
     );
 };

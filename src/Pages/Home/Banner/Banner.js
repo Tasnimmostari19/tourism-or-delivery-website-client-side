@@ -9,7 +9,7 @@ const Banner = () => {
     return (
         <>
             <Carousel>
-                <Carousel.Item>
+                <Carousel.Item style={{ height: '800px' }}>
                     <img
                         className="d-block w-100"
                         src={im1}

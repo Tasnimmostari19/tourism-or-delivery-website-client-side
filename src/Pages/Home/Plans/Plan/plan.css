@@ -1,0 +1,17 @@
+/* .card-img{
+height: 446.61 !important;
+} */
+
+.card-style{
+    background-color: rgb(169, 194, 169);
+}
+
+.book-btn{
+    background-color: rgb(36, 143, 36);
+    border-color: rgb(42, 184, 42);
+}
+.book-btn:hover{
+    background-color: rgb(1, 32, 1);
+    border-color: rgb(36, 143, 36);
+    color: white;
+}
