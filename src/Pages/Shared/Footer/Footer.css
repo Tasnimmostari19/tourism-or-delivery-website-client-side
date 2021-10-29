@@ -1,0 +1,12 @@
+.footer{
+    background-color: rgb(1, 31, 1);
+    height: 400px;
+    color: white;
+}
+.font{
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+}
+.footer-title ,.footer-info,.footer-icon{
+    margin-top: 150px;
+}
