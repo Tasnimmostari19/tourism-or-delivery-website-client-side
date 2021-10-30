@@ -14,7 +14,7 @@ const PlaceOrder = () => {
     // console.log(tripId);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/trips/${tripId}`)
+        fetch(`https://pure-reaches-42595.herokuapp.com/trips/${tripId}`)
             .then(res => res.json())
             .then(data => setTrip(data))
     }, [])

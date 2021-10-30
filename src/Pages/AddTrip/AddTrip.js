@@ -4,8 +4,33 @@ import { useForm } from "react-hook-form";
 const AddTrip = () => {
 
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+
+        console.log(data);
+
+        fetch('https://pure-reaches-42595.herokuapp.com/trips', {
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+            body: JSON.stringify(data)
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('successfully added user')
+                    reset(data);
+                }
+            })
+
+    }
+
+
+
 
 
     return (
@@ -16,7 +41,7 @@ const AddTrip = () => {
                 <input placeholder="Name" {...register("name")} />
                 <input placeholder="Status" {...register("status")} />
 
-                <input placeholder="Price" type="number" {...register("price")} />
+                <input placeholder="Price" {...register("price")} />
                 <input placeholder="Description" {...register("description")} />
                 <input placeholder="Img Url" {...register("img")} />
 

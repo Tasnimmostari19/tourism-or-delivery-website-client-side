@@ -12,7 +12,7 @@ const Plans = () => {
 
 
     useEffect(() => {
-        const url = 'http://localhost:5000/trips'
+        const url = 'https://pure-reaches-42595.herokuapp.com/trips'
         fetch(url)
             .then(res => res.json())
             .then(data => setPlans(data))
