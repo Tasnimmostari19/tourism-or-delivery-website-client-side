@@ -3,10 +3,12 @@ import { Image } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import './PlaceOrder.css'
+import useAuth from '../../../../hooks/useAuth';
 
 
 const PlaceOrder = () => {
 
+    const { user } = useAuth();
     const { tripId } = useParams();
     const [trip, setTrip] = useState({})
     // console.log(tripId);
@@ -37,12 +39,12 @@ const PlaceOrder = () => {
             <h2>Booking</h2>
             <form className='order-form' onSubmit={handleSubmit(onSubmit)}>
                 {/* defaultValue={user.name} */}
-                <input {...register("name", { required: true })} />
+                <input defaultValue={user.displayName} {...register("name", { required: true })} />
 
-                <input {...register("email", { required: true })} />
+                <input defaultValue={user.email} {...register("email", { required: true })} />
                 <input placeholder="Address" {...register("address")} />
-                <input placeholder="Address" type="number" {...register("phone")} />
-                <input type="submit" />
+                <input placeholder="Phone Number" type="number" {...register("phone")} />
+                <input className='form-submit' type="submit" />
             </form>
 
         </>
