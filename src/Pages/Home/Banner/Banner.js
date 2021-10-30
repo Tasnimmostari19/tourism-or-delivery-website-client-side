@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Carousel, Image } from 'react-bootstrap';
 import im1 from '../../../images/im1.jpg'
 import im2 from '../../../images/im2.jpg'
@@ -6,8 +6,14 @@ import im3 from '../../../images/im3.jpg'
 
 
 const Banner = () => {
+    // const [isLoading, setIsLoading] = useState();
+
+
     return (
         <>
+            {/* {
+                setIsLoading(false)
+            } */}
             <Carousel>
                 <Carousel.Item style={{ height: '800px' }}>
                     <img
@@ -45,8 +51,13 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+            {/* {
+                setIsLoading(true)
+            },
+            isLoading */}
         </>
     );
 };
+
 
 export default Banner;

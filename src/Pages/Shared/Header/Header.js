@@ -12,22 +12,22 @@ const Header = () => {
         <div>
             <Navbar style={{ height: '80px' }} bg="dark" variant="dark" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">book A trip</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">book A trip</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
 
                         {user?.email ?
-                            <Nav.Link href="#pricing">My Trips</Nav.Link>
+                            <Nav.Link as={Link} to="mytrips">My Trips</Nav.Link>
                             :
                             <></>
                         }
                         {user?.email ?
-                            <Nav.Link href="#pricing">Manage All Orders</Nav.Link>
+                            <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
                             :
                             <></>
                         }
                         {user?.email ?
-                            <Nav.Link href="#pricing">Add a Trip</Nav.Link>
+                            <Nav.Link as={Link} to="/addtrip">Add a Trip</Nav.Link>
                             :
                             <></>
                         }

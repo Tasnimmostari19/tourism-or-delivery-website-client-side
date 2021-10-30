@@ -10,6 +10,7 @@ import AuthProvider from './contexts/AuthProvider';
 import NotFound from './Pages/NotFound/NotFound';
 import SignIn from './SignIn/SignIn';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import AddTrip from './Pages/AddTrip/AddTrip';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <PrivateRoute path='/placeorder/:tripId'>
               <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path='/addtrip'>
+              <AddTrip></AddTrip>
             </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
