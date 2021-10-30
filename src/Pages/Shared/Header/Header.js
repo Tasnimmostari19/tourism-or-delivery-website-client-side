@@ -16,16 +16,29 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
 
-                        <Nav.Link href="#pricing">My Trips</Nav.Link>
-                        <Nav.Link href="#pricing">Manage All Orders</Nav.Link>
-                        <Nav.Link href="#pricing">Add a Trip</Nav.Link>
+                        {user?.email ?
+                            <Nav.Link href="#pricing">My Trips</Nav.Link>
+                            :
+                            <></>
+                        }
+                        {user?.email ?
+                            <Nav.Link href="#pricing">Manage All Orders</Nav.Link>
+                            :
+                            <></>
+                        }
+                        {user?.email ?
+                            <Nav.Link href="#pricing">Add a Trip</Nav.Link>
+                            :
+                            <></>
+                        }
+
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         {user?.email ?
                             <Button onClick={logOut} variant="light">Signout</Button> :
-                            <Nav.Link as={Link} to="/signin">Signin</Nav.Link>}
+                            <Nav.Link as={Link} to="/login">Signin</Nav.Link>}
                         <Navbar.Text>
-                            Signed in as: <a href="#signin">{user?.displayName}</a>
+                            Signed in as: <a href="#login">{user?.displayName}</a>
                         </Navbar.Text>
                     </Navbar.Collapse>
                 </Container>

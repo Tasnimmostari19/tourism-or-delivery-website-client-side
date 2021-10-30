@@ -9,6 +9,7 @@ import PlaceOrder from './Pages/Home/Plans/PlaceOrder/PlaceOrder';
 import AuthProvider from './contexts/AuthProvider';
 import NotFound from './Pages/NotFound/NotFound';
 import SignIn from './SignIn/SignIn';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -23,12 +24,12 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
-            <Route path='/signin'>
+            <Route path='/login'>
               <SignIn></SignIn>
             </Route>
-            <Route path='/placeorder/:tripId'>
+            <PrivateRoute path='/placeorder/:tripId'>
               <PlaceOrder></PlaceOrder>
-            </Route>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>
