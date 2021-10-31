@@ -11,7 +11,7 @@ const ManageOrders = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/bookings')
+        fetch('https://pure-reaches-42595.herokuapp.com/bookings')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
@@ -20,7 +20,7 @@ const ManageOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Delete sure?')
         if (proceed) {
-            const url = `http://localhost:5000/bookings/${id}`;
+            const url = `https://pure-reaches-42595.herokuapp.com/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -38,7 +38,7 @@ const ManageOrders = () => {
 
 
     const handlePending = id => {
-        const url = `http://localhost:5000/bookings/${id}`;
+        const url = `https://pure-reaches-42595.herokuapp.com/bookings/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -49,7 +49,7 @@ const ManageOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('updated user successfully')
+                    alert('Approved')
 
                 }
             })

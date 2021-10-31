@@ -17,9 +17,9 @@ const Header = () => {
 
 
 
-            <Navbar bg="dark" expand="lg">
+            <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand as={Link} to="/home" style={{ color: 'white' }}>book A trip</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">book A trip</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

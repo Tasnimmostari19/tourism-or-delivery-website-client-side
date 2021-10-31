@@ -1,7 +1,9 @@
+@media only screen and (max-width:699px){
 .add-trip-form input{
     width: 200px;
     
 }
 .add-trip-form{
     border: 1px solid white;
+}
 }

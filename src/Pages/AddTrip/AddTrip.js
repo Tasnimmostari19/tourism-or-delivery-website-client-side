@@ -23,7 +23,7 @@ const AddTrip = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('successfully added user')
+                    alert('successfully added a trip')
                     reset(data);
                 }
             })

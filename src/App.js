@@ -36,12 +36,12 @@ function App() {
             <PrivateRoute path='/addtrip'>
               <AddTrip></AddTrip>
             </PrivateRoute>
-            <Route path='/mytrips'>
+            <PrivateRoute path='/mytrips'>
               <MyTrips></MyTrips>
-            </Route>
-            <Route path='/manageorders'>
+            </PrivateRoute>
+            <PrivateRoute path='/manageorders'>
               <ManageOrders></ManageOrders>
-            </Route>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

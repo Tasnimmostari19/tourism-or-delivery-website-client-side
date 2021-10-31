@@ -42,7 +42,7 @@ const PlaceOrder = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('successfully added user')
+                    alert('successfully orderd a trip')
                     reset(data);
                 }
             })
