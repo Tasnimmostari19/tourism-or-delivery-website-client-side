@@ -11,11 +11,11 @@ const MyTrips = () => {
     return (
         <div>
             <h2>My Trips</h2>
-            <Row xs={1} md={2} className="g-4">
-                {
-                    myTrips.map(myTrip => console.log(myTrip))
-                }
-            </Row>
+            {/* <Row xs={1} md={2} className="g-4">
+            {
+                // myTrips.map(myTrip => console.log(myTrip))
+            }
+        </Row> */}
 
         </div>
     );

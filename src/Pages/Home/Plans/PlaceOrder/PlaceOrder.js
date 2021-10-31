@@ -24,6 +24,7 @@ const PlaceOrder = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
+        data.status = 'panding';
         data.booking = tripId;
 
         console.log(data);
