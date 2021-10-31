@@ -28,7 +28,7 @@ const PlaceOrder = () => {
 
         console.log(data);
 
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://pure-reaches-42595.herokuapp.com/bookings`, {
 
             method: 'POST',
             headers: {
