@@ -11,6 +11,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import SignIn from './SignIn/SignIn';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import AddTrip from './Pages/AddTrip/AddTrip';
+import MyTrips from './Pages/MyTrips/MyTrips/MyTrips';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             <PrivateRoute path='/addtrip'>
               <AddTrip></AddTrip>
             </PrivateRoute>
+            <Route path='/mytrips'>
+              <MyTrips></MyTrips>
+            </Route>
             <Route path='*'>
               <NotFound></NotFound>
             </Route>

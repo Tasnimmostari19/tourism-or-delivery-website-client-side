@@ -22,9 +22,30 @@ const PlaceOrder = () => {
 
 
 
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        data.booking = tripId;
 
+        console.log(data);
+
+        fetch(`http://localhost:5000/bookings`, {
+
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+
+            },
+            body: JSON.stringify(data)
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('successfully added user')
+                    reset(data);
+                }
+            })
+    }
 
 
     return (
@@ -42,7 +63,7 @@ const PlaceOrder = () => {
                 <input defaultValue={user.displayName} {...register("name", { required: true })} />
 
                 <input defaultValue={user.email} {...register("email", { required: true })} />
-                <input placeholder="Address" {...register("address")} />
+                <input placeholder="dd/mm/yyyy" {...register("date")} />
                 <input placeholder="Phone Number" type="number" {...register("phone")} />
                 <input className='form-submit' type="submit" />
             </form>
