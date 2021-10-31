@@ -16,8 +16,9 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
 
+
                         {user?.email ?
-                            <Nav.Link as={Link} to="mytrips">My Trips</Nav.Link>
+                            <Nav.Link as={Link} to="/mytrips">My Trips</Nav.Link>
                             :
                             <></>
                         }

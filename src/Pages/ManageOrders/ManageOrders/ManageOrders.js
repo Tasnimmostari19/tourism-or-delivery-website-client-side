@@ -14,7 +14,7 @@ const ManageOrders = () => {
         fetch('http://localhost:5000/bookings')
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [orders])
 
 
     const handleDeleteUser = id => {
@@ -37,6 +37,27 @@ const ManageOrders = () => {
     }
 
 
+    const handlePending = id => {
+        const url = `http://localhost:5000/bookings/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('updated user successfully')
+
+                }
+            })
+    }
+
+
+    console.log(orders);
+
 
     return (
         <div>
@@ -48,25 +69,25 @@ const ManageOrders = () => {
                         <Col key={order._id}>
                             <Card className='card-style'>
                                 <Card.Body>
-                                    <Card.Title>{order.name}</Card.Title>
+                                    <Card.Title>Name: {order.name}</Card.Title>
                                     <Card.Text>
-                                        {order.email}
+                                        Email: {order.email}
                                     </Card.Text>
                                     <Card.Text>
-                                        {order.booking}
+                                        Booking Id: {order.booking}
                                     </Card.Text>
                                     <Card.Text>
-                                        {order.date}
+                                        Trip date: {order.date}
                                     </Card.Text>
                                     <Card.Text>
-                                        {order.phone}
+                                        Phone no: {order.phone}
                                     </Card.Text>
 
                                     <Button onClick={() => handleDeleteUser(order._id)} className='book-btn'>Delete</Button>
 
-                                    <Link to={`/bookings/${order._id}`}>
-                                        <Button className='book-btn'>{order.status}</Button>
-                                    </Link>
+
+                                    <Button onClick={() => handlePending(order._id)} className='book-btn'>{order.status}</Button>
+
                                 </Card.Body>
                             </Card>
                         </Col>

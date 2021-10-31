@@ -9,7 +9,9 @@ const MyTrips = () => {
 
     const { user } = useAuth();
 
-    // var trip = '';
+
+
+
 
     useEffect(() => {
 
@@ -52,31 +54,33 @@ const MyTrips = () => {
             <h2>My Trips</h2>
             <Row xs={1} md={2} className="g-4">
                 {
-                    myTrips.map(myTrip => <Col key={myTrip._id}>
-                        <Card className='card-style'>
-                            <Card.Body>
-                                <Card.Title>Name: {myTrip?.name}</Card.Title>
-                                <Card.Text>
-                                    Email: {myTrip?.email}
-                                </Card.Text>
-                                <Card.Text>
-                                    Booking id: {myTrip?.booking}
-                                </Card.Text>
-                                <Card.Text>
-                                    Date: {myTrip?.date}
-                                </Card.Text>
-                                <Card.Text>
-                                    Phone: {myTrip?.phone}
-                                </Card.Text>
-                                <Card.Text>
-                                    Status: {myTrip?.status}
-                                </Card.Text>
+                    myTrips.map(
+                        myTrip => <Col key={myTrip._id}>
+                            <Card className='card-style'>
+                                <Card.Body>
+                                    <Card.Title>Name: {myTrip?.name}</Card.Title>
+                                    <Card.Text>
+                                        Email: {myTrip?.email}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Booking id: {myTrip?.booking}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Date: {myTrip?.date}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Phone: {myTrip?.phone}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Status: {myTrip?.status}
+                                    </Card.Text>
 
-                                <Button onClick={() => handleDeleteUser(myTrip._id)} className='book-btn'>Delete</Button>
+                                    <Button onClick={() => handleDeleteUser(myTrip._id)} className='book-btn'>Delete</Button>
 
-                            </Card.Body>
-                        </Card>
-                    </Col>)
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    )
                 }
             </Row>
 
