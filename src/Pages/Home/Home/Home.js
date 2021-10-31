@@ -8,9 +8,11 @@ import Reviews from '../Reviews/Reviews/Reviews';
 
 const Home = () => {
 
+
     return (
         <div>
             {/* <Spinner animation="grow" variant="dark" /> */}
+
             <Banner></Banner>
             <Plans></Plans>
             <Reviews></Reviews>

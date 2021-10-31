@@ -10,31 +10,38 @@ const Header = () => {
     console.log(user);
     return (
         <div>
-            <Navbar style={{ height: '80px' }} bg="dark" variant="dark" sticky="top">
+
+
+
+
+
+
+
+            <Navbar bg="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand as={Link} to="/home">book A trip</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                    <Navbar.Brand as={Link} to="/home" style={{ color: 'white' }}>book A trip</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            {user?.email ?
+                                <Nav.Link as={Link} to="/mytrips">My Trips</Nav.Link>
+                                :
+                                <></>
+                            }
+                            {user?.email ?
+                                <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
+                                :
+                                <></>
+                            }
+                            {user?.email ?
+                                <Nav.Link as={Link} to="/addtrip">Add a Trip</Nav.Link>
+                                :
+                                <></>
+                            }
 
 
-                        {user?.email ?
-                            <Nav.Link as={Link} to="/mytrips">My Trips</Nav.Link>
-                            :
-                            <></>
-                        }
-                        {user?.email ?
-                            <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
-                            :
-                            <></>
-                        }
-                        {user?.email ?
-                            <Nav.Link as={Link} to="/addtrip">Add a Trip</Nav.Link>
-                            :
-                            <></>
-                        }
-
-                    </Nav>
-                    <Navbar.Collapse className="justify-content-end">
+                        </Nav>
                         {user?.email ?
                             <Button onClick={logOut} variant="light">Signout</Button> :
                             <Nav.Link as={Link} to="/login">Signin</Nav.Link>}
@@ -44,7 +51,13 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+
+
+
         </div>
+
+
+
     );
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Plan from '../Plan/Plan';
 
 
@@ -11,12 +11,18 @@ const Plans = () => {
 
 
 
+
+
     useEffect(() => {
+
         const url = 'https://pure-reaches-42595.herokuapp.com/trips'
         fetch(url)
             .then(res => res.json())
             .then(data => setPlans(data))
+
     }, [])
+
+
 
     // console.log(plans);
 
@@ -24,6 +30,7 @@ const Plans = () => {
 
         <div>
             <h2>Plans</h2>
+
             <Row xs={1} md={2} className="g-4">
                 {
                     plans.map(plan => <Plan
@@ -33,6 +40,7 @@ const Plans = () => {
                 }
             </Row>
         </div>
+
     );
 };
 

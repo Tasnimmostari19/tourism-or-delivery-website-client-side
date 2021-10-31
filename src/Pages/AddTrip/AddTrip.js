@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import './AddTrip.css'
 
 const AddTrip = () => {
 
@@ -36,7 +37,7 @@ const AddTrip = () => {
     return (
         <div>
             <h2>Add Trip</h2>
-            <form className='order-form' onSubmit={handleSubmit(onSubmit)}>
+            <form className='order-form add-trip-form' onSubmit={handleSubmit(onSubmit)}>
                 {/* defaultValue={user.name} */}
                 <input placeholder="Name" {...register("name")} />
                 <input placeholder="Status" {...register("status")} />
