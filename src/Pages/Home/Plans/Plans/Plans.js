@@ -15,7 +15,7 @@ const Plans = () => {
 
     useEffect(() => {
 
-        const url = 'https://pure-reaches-42595.herokuapp.com/trips'
+        const url = 'https://bashful-stage-production.up.railway.app/trips'
         fetch(url)
             .then(res => res.json())
             .then(data => setPlans(data))

@@ -14,7 +14,7 @@ const PlaceOrder = () => {
     // console.log(tripId);
 
     useEffect(() => {
-        fetch(`https://pure-reaches-42595.herokuapp.com/trips/${tripId}`)
+        fetch(`https://bashful-stage-production.up.railway.app/trips/${tripId}`)
             .then(res => res.json())
             .then(data => setTrip(data))
     }, [])
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
 
         console.log(data);
 
-        fetch(`https://pure-reaches-42595.herokuapp.com/bookings`, {
+        fetch(`https://bashful-stage-production.up.railway.app/bookings`, {
 
             method: 'POST',
             headers: {

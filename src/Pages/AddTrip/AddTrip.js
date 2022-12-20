@@ -10,7 +10,7 @@ const AddTrip = () => {
 
         console.log(data);
 
-        fetch('https://pure-reaches-42595.herokuapp.com/trips', {
+        fetch('https://bashful-stage-production.up.railway.app/trips', {
 
             method: 'POST',
             headers: {
