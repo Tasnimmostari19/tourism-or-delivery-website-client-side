@@ -15,7 +15,7 @@ const MyTrips = () => {
 
     useEffect(() => {
 
-        const url = `https://bashful-stage-production.up.railway.app/bookings`;
+        const url = `https://tourism-or-delivery-website-server-side.vercel.app/bookings`;
         fetch(url)
             .then(res => res.json())
             .then(datas => {
@@ -31,7 +31,7 @@ const MyTrips = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Delete sure?')
         if (proceed) {
-            const url = `https://bashful-stage-production.up.railway.app/bookings/${id}`;
+            const url = `https://tourism-or-delivery-website-server-side.vercel.app/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

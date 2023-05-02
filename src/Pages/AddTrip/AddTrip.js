@@ -10,7 +10,7 @@ const AddTrip = () => {
 
         console.log(data);
 
-        fetch('https://bashful-stage-production.up.railway.app/trips', {
+        fetch('https://tourism-or-delivery-website-server-side.vercel.app/trips', {
 
             method: 'POST',
             headers: {

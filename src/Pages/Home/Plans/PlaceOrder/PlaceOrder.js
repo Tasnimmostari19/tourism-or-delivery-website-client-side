@@ -14,7 +14,7 @@ const PlaceOrder = () => {
     // console.log(tripId);
 
     useEffect(() => {
-        fetch(`https://bashful-stage-production.up.railway.app/trips/${tripId}`)
+        fetch(`https://tourism-or-delivery-website-server-side.vercel.app/trips/${tripId}`)
             .then(res => res.json())
             .then(data => setTrip(data))
     }, [])
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
 
         console.log(data);
 
-        fetch(`https://bashful-stage-production.up.railway.app/bookings`, {
+        fetch(`https://tourism-or-delivery-website-server-side.vercel.app/bookings`, {
 
             method: 'POST',
             headers: {

@@ -15,7 +15,7 @@ const Plans = () => {
 
     useEffect(() => {
 
-        const url = 'https://bashful-stage-production.up.railway.app/trips'
+        const url = 'https://tourism-or-delivery-website-server-side.vercel.app/trips'
         fetch(url)
             .then(res => res.json())
             .then(data => setPlans(data))

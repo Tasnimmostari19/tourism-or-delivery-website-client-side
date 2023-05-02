@@ -11,7 +11,7 @@ const ManageOrders = () => {
 
 
     useEffect(() => {
-        fetch('https://bashful-stage-production.up.railway.app/bookings')
+        fetch('https://tourism-or-delivery-website-server-side.vercel.app/bookings')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
@@ -20,7 +20,7 @@ const ManageOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Delete sure?')
         if (proceed) {
-            const url = `https://bashful-stage-production.up.railway.app/bookings/${id}`;
+            const url = `https://tourism-or-delivery-website-server-side.vercel.app/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -38,7 +38,7 @@ const ManageOrders = () => {
 
 
     const handlePending = id => {
-        const url = `https://bashful-stage-production.up.railway.app/bookings/${id}`;
+        const url = `https://tourism-or-delivery-website-server-side.vercel.app/bookings/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
