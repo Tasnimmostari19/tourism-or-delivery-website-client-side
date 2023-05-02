@@ -20,18 +20,19 @@ const Plans = () => {
             .then(res => res.json())
             .then(data => setPlans(data))
 
-    }, [])
+    }, [plans])
 
 
 
-    // console.log(plans);
+    console.log(plans);
 
     return (
 
         <div>
-            <h2>Plans</h2>
+            <h2 style={{ marginTop: '20px' }}>Plans</h2>
 
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={2} className="g-4 mx-5 my-2">
+
                 {
                     plans.map(plan => <Plan
                         key={plan._id}
